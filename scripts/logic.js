@@ -3,11 +3,7 @@ $("document").ready(function() {
 
   tvChannels.tvStatus = false;
   tvChannels.currentChannel = 0;
-  tvChannels.channelsList = [
-    "https://www.youtube.com/embed/f2p0xrY4CMs",
-    "https://www.youtube.com/embed/tAGnKpE4NCI",
-    "https://www.youtube.com/embed/u9Dg-g7t2l4"
-  ];
+  tvChannels.channelsList = ["f2p0xrY4CMs", "gMk9FQj7NPY", 'B7vuaEv1b24'];
   tvChannels.channelUp = document.getElementById("channelUp");
   tvChannels.channelDown = document.getElementById("channelDown");
   tvChannels.powerBtn = document.getElementById("powerBtn");
@@ -52,17 +48,24 @@ $("document").ready(function() {
       document.getElementById("channelDown").disabled = false;
       document.getElementById("channelUp").disabled = false;
       tvChannels.videoFrame.style.display = "block";
+      tvChannels.setChannel();
     } else {
       document.getElementById("channelDown").disabled = true;
       document.getElementById("channelUp").disabled = true;
-      tvChannels.videoFrame.style.display = "none";
+      tvChannels.videoFrame.setAttribute.src= '';
+    //   tvChannels.videoFrame.style.display = "none";
     }
   };
 
   tvChannels.setChannel = () => {
+    let youTubeLink = "https://www.youtube.com/embed/" +
+    tvChannels.channelsList[tvChannels.currentChannel] +
+    "?rel=0&autoplay=1&loop=1"
+    console.log(youTubeLink)
     tvChannels.videoFrame.setAttribute(
       "src",
-      tvChannels.channelsList[tvChannels.currentChannel]
+      youTubeLink
     );
   };
+//   tvChannels.setChannel();
 });
