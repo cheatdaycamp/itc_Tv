@@ -1,7 +1,7 @@
 .tv {
   background-color: lightsalmon;
-  height:500px;
-  width:700px;
+  height: 500px;
+  width: 700px;
 }
 
 body,
@@ -10,9 +10,9 @@ html {
   height: 100%;
   overflow: hidden;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
