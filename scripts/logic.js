@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const TV_APP = {};
 
   TV_APP.start = () => {
@@ -43,21 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     TV_APP.togglePower = () => {
       TV_APP.tvStatus = !TV_APP.tvStatus;
-      if (TV_APP.tvStatus) {
-        document.getElementById("channelDown").disabled = false;
-        document.getElementById("channelUp").disabled = false;
-        TV_APP.videoFrame.style.display = "block";
-        TV_APP.setChannel();
-      } else {
-        document.getElementById("channelDown").disabled = true;
-        document.getElementById("channelUp").disabled = true;
-        TV_APP.turnChannelOff();
-        TV_APP.videoFrame.style.display = "none";
-      }
+      TV_APP.tvStatus ? TV_APP.turnOff() : TV_APP.turnOn();
     };
 
-    TV_APP.turnChannelOff = () => {
+    TV_APP.turnOn = () => {
+      document.getElementById("channelDown").disabled = false;
+      document.getElementById("channelUp").disabled = false;
+      TV_APP.videoFrame.style.display = "block";
+      TV_APP.setChannel();
+    };
+
+    TV_APP.turnOff = () => {
+      document.getElementById("channelDown").disabled = true;
+      document.getElementById("channelUp").disabled = true;
       TV_APP.videoFrame.setAttribute("src", "");
+      TV_APP.videoFrame.style.display = "none";
     };
 
     TV_APP.setChannel = () => {
