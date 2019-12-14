@@ -1,5 +1,5 @@
-$("document").ready(function() {
-  let tvChannels = {};
+document.addEventListener("DOMContentLoaded", () => {
+  const tvChannels = {};
 
   tvChannels.start = () => {
     tvChannels.tvStatus = false;
@@ -50,9 +50,13 @@ $("document").ready(function() {
       } else {
         document.getElementById("channelDown").disabled = true;
         document.getElementById("channelUp").disabled = true;
-        tvChannels.videoFrame.setAttribute.src = "";
+        tvChannels.turnChannelOff();
         tvChannels.videoFrame.style.display = "none";
       }
+    };
+
+    tvChannels.turnChannelOff = () => {
+      tvChannels.videoFrame.setAttribute("src", "");
     };
 
     tvChannels.setChannel = () => {
