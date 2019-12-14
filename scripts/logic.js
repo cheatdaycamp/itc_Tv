@@ -1,72 +1,73 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const tvChannels = {};
 
-  tvChannels.start = () => {
-    tvChannels.tvStatus = false;
-    tvChannels.currentChannel = 0;
-    tvChannels.channelsList = ["f2p0xrY4CMs", "gMk9FQj7NPY", "B7vuaEv1b24"];
-    tvChannels.channelUp = document.getElementById("channelUp");
-    tvChannels.channelDown = document.getElementById("channelDown");
-    tvChannels.powerBtn = document.getElementById("powerBtn");
-    tvChannels.videoFrame = document.getElementById("videoFrame");
+  const TV_APP = {};
 
-    tvChannels.channelUp.addEventListener("click", () => {
-      tvChannels.channelUp();
-      tvChannels.setChannel();
+  TV_APP.start = () => {
+    TV_APP.tvStatus = false;
+    TV_APP.currentChannel = 0;
+    TV_APP.channelsList = ["f2p0xrY4CMs", "gMk9FQj7NPY", "B7vuaEv1b24"];
+    TV_APP.channelUp = document.getElementById("channelUp");
+    TV_APP.channelDown = document.getElementById("channelDown");
+    TV_APP.powerBtn = document.getElementById("powerBtn");
+    TV_APP.videoFrame = document.getElementById("videoFrame");
+
+    TV_APP.channelUp.addEventListener("click", () => {
+      TV_APP.channelUp();
+      TV_APP.setChannel();
     });
 
-    tvChannels.channelDown.addEventListener("click", () => {
-      tvChannels.channelDown();
-      tvChannels.setChannel();
+    TV_APP.channelDown.addEventListener("click", () => {
+      TV_APP.channelDown();
+      TV_APP.setChannel();
     });
 
-    tvChannels.powerBtn.addEventListener("click", () => {
-      tvChannels.togglePower();
+    TV_APP.powerBtn.addEventListener("click", () => {
+      TV_APP.togglePower();
     });
 
-    tvChannels.channelUp = () => {
-      if (tvChannels.currentChannel === tvChannels.channelsList.length - 1) {
-        tvChannels.currentChannel = 0;
+    TV_APP.channelUp = () => {
+      if (TV_APP.currentChannel === TV_APP.channelsList.length - 1) {
+        TV_APP.currentChannel = 0;
       } else {
-        ++tvChannels.currentChannel;
+        ++TV_APP.currentChannel;
       }
     };
 
-    tvChannels.channelDown = () => {
-      if (tvChannels.currentChannel === 0) {
-        tvChannels.currentChannel = tvChannels.channelsList.length - 1;
+    TV_APP.channelDown = () => {
+      if (TV_APP.currentChannel === 0) {
+        TV_APP.currentChannel = TV_APP.channelsList.length - 1;
       } else {
-        --tvChannels.currentChannel;
+        --TV_APP.currentChannel;
       }
     };
 
-    tvChannels.togglePower = () => {
-      tvChannels.tvStatus = !tvChannels.tvStatus;
-      if (tvChannels.tvStatus) {
+    TV_APP.togglePower = () => {
+      TV_APP.tvStatus = !TV_APP.tvStatus;
+      if (TV_APP.tvStatus) {
         document.getElementById("channelDown").disabled = false;
         document.getElementById("channelUp").disabled = false;
-        tvChannels.videoFrame.style.display = "block";
-        tvChannels.setChannel();
+        TV_APP.videoFrame.style.display = "block";
+        TV_APP.setChannel();
       } else {
         document.getElementById("channelDown").disabled = true;
         document.getElementById("channelUp").disabled = true;
-        tvChannels.turnChannelOff();
-        tvChannels.videoFrame.style.display = "none";
+        TV_APP.turnChannelOff();
+        TV_APP.videoFrame.style.display = "none";
       }
     };
 
-    tvChannels.turnChannelOff = () => {
-      tvChannels.videoFrame.setAttribute("src", "");
+    TV_APP.turnChannelOff = () => {
+      TV_APP.videoFrame.setAttribute("src", "");
     };
 
-    tvChannels.setChannel = () => {
+    TV_APP.setChannel = () => {
       let youTubeLink =
         "https://www.youtube.com/embed/" +
-        tvChannels.channelsList[tvChannels.currentChannel] +
+        TV_APP.channelsList[TV_APP.currentChannel] +
         "?rel=0&autoplay=1&loop=1";
-      tvChannels.videoFrame.setAttribute("src", youTubeLink);
+      TV_APP.videoFrame.setAttribute("src", youTubeLink);
     };
   };
 
-  tvChannels.start();
+  TV_APP.start();
 });
