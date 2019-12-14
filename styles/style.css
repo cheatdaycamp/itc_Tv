@@ -16,3 +16,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+button{
+  background-color:black;
+  color:white;
+  border-radius: 50%;
+}
+
+button:hover{
+  color:gold;
+}
