@@ -3,11 +3,7 @@ $("document").ready(function() {
 
   tvChannels.tvStatus = false;
   tvChannels.currentChannel = 0;
-<<<<<<< HEAD
   tvChannels.channelsList = ["f2p0xrY4CMs", "gMk9FQj7NPY", "B7vuaEv1b24"];
-=======
-  tvChannels.channelsList = ["f2p0xrY4CMs", "gMk9FQj7NPY", 'B7vuaEv1b24'];
->>>>>>> master
   tvChannels.channelUp = document.getElementById("channelUp");
   tvChannels.channelDown = document.getElementById("channelDown");
   tvChannels.powerBtn = document.getElementById("powerBtn");
@@ -68,5 +64,4 @@ $("document").ready(function() {
       "?rel=0&autoplay=1&loop=1";
     tvChannels.videoFrame.setAttribute("src", youTubeLink);
   };
-//   tvChannels.setChannel();
 });
