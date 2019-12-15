@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let youTubeLink =
         "https://www.youtube.com/embed/" +
         TV_APP.channelsList[TV_APP.currentChannel] +
-        "?rel=0&autoplay=1&showinfo=0&controls=0&loop=1&modestbranding=0";
+        "?rel=1&autoplay=1&showinfo=0&controls=0&loop=1&modestbranding=0";
       TV_APP.videoFrame.setAttribute("src", youTubeLink);
       TV_APP.channelDisplay.innerHTML= TV_APP.currentChannel+1
     };
