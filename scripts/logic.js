@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     TV_APP.channelDown = document.getElementById("channelDown");
     TV_APP.powerBtn = document.getElementById("powerBtn");
     TV_APP.videoFrame = document.getElementById("videoFrame");
+    TV_APP.channelDisplay = document.getElementById('channelDisplay');
+    TV_APP.channelLegend = document.getElementById('channelLegend');
 
     TV_APP.channelUp.addEventListener("click", () => {
       TV_APP.channelUp();
@@ -49,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("channelDown").disabled = false;
       document.getElementById("channelUp").disabled = false;
       TV_APP.videoFrame.style.display = "block";
+      TV_APP.channelLegend.style.display = 'block';
       TV_APP.setChannel();
     };
 
@@ -56,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("channelDown").disabled = true;
       document.getElementById("channelUp").disabled = true;
       TV_APP.videoFrame.setAttribute("src", "");
+      TV_APP.channelLegend.style.display = 'none';
       TV_APP.videoFrame.style.display = "none";
     };
 
@@ -65,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         TV_APP.channelsList[TV_APP.currentChannel] +
         "?rel=0&autoplay=1&showinfo=0&controls=0&loop=1&modestbranding=0";
       TV_APP.videoFrame.setAttribute("src", youTubeLink);
+      TV_APP.channelDisplay.innerHTML= TV_APP.currentChannel+1
     };
   };
 
