@@ -1,7 +1,10 @@
 .tv {
-  background-color: lightsalmon;
   height: 500px;
   width: 700px;
+  background-image: url('../img/tvFrame.png');
+  background-position: center;
+  background-size: cover;
+  border: 1px solid red;
 }
 
 body,
@@ -9,12 +12,30 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  font-family: 'Roboto Mono', monospace;
 }
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("../img/tvBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.buttonsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  width: min-content
+}
+.buttonsContainer button{
+  margin: 10px;
+  
 }
 button{
   background-color:black;

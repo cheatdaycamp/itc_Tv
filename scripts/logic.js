@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("channelDown").disabled = false;
       document.getElementById("channelUp").disabled = false;
       TV_APP.videoFrame.style.display = "block";
-      TV_APP.channelLegend.style.display = 'block';
+      TV_APP.channelLegend.style.visibility = 'visible';
       TV_APP.setChannel();
     };
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("channelDown").disabled = true;
       document.getElementById("channelUp").disabled = true;
       TV_APP.videoFrame.setAttribute("src", "");
-      TV_APP.channelLegend.style.display = 'none';
+      TV_APP.channelLegend.style.visibility = 'hidden';
       TV_APP.videoFrame.style.display = "none";
     };
 

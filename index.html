@@ -8,34 +8,53 @@
     <title>
       TV
     </title>
-    
+
     <link rel="Icon" href="./img/tv.png" />
-    
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font AweSome -->
-    <script src="https://kit.fontawesome.com/7d8cecbed4.js" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://kit.fontawesome.com/7d8cecbed4.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
   </head>
 
   <body>
-    <div class="tv">
-      <div id= 'channelLegend' style='display: none'>
-        The current Channel is: <span id="channelDisplay"></span>
-      </div>
-      <button id="powerBtn">
-        <i class="fas fa-power-off"></i>
-      </button>
-      <button id="channelDown" disabled="true">
-        <i class="fas fa-minus"></i>
-      </button>
-      <button id="channelUp" disabled="true">
-        <i class="fas fa-plus"></i>
-      </button>
+    <h1>
+      My Tv Channels App
+    </h1>
 
+    <div class="tv">
+      <div class="buttonsContainer">
+        <button id="powerBtn">
+          <i class="fas fa-power-off"></i>
+        </button>
+        <button id="channelDown" disabled="true">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button id="channelUp" disabled="true">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
       <iframe
-      width="300px" height="200px" id="videoFrame" style='display: none'
-      > </iframe>
+        width="300px"
+        height="200px"
+        id="videoFrame"
+        style="display: none"
+      >
+      </iframe>
+    </div>
+    <div>
+      <p id="channelLegend" style="visibility:hidden">
+        The current Channel is: <span id="channelDisplay"></span>
+      </p>
     </div>
   </body>
 
