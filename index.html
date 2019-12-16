@@ -30,29 +30,31 @@
     <h1>
       My Tv Channels App
     </h1>
+    <div class="container">
+      <div class="tv-wrapper">
+        <div class="videoFrame">
+          <div id="background">asdasd</div>
+          <iframe
+            id="videoFrame"
+            style="display: none"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          >
+          </iframe>
 
-    <div class="tv">
-      <div class="wrapper">
-        <iframe
-          id="videoFrame"
-          style="display: none"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        >
-        </iframe>
-      </div>
-
-      <div class="buttonsContainer">
-        <button id="powerBtn">
-          <i class="fas fa-power-off"></i>
-        </button>
-        <button id="channelUp" disabled="true">
-          <i class="fas fa-plus"></i>
-        </button>
-        <button id="channelDown" disabled="true">
-          <i class="fas fa-minus"></i>
-        </button>
+        </div>
+        <div class="buttonsContainer">
+          <button id="powerBtn">
+            <i class="fas fa-power-off"></i>
+          </button>
+          <button id="channelUp" disabled="true">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button id="channelDown" disabled="true">
+            <i class="fas fa-minus"></i>
+          </button>
+        </div>
       </div>
     </div>
     <div>
@@ -70,5 +72,5 @@
   ></script>
 
   <!--Logic-->
-  <script src="./scripts/logic.js"></script>
+  <script src="./scripts/logic02.js"></script>
 </html>

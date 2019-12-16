@@ -5,7 +5,9 @@ html {
   overflow: hidden;
   font-family: "Roboto Mono", monospace;
   text-align: center;
-  z-index: -5;
+  z-index: -5555;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -18,42 +20,59 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-
-.tv {
-  height: calc(80vw*0.66);
-  width: 80vw;
-  background-image: url("../img/tvFrame.png");
-  background-position: center;
-  background-size: contain;
-  border: 1px solid red;
-  display: flex;
-  background-repeat: no-repeat;
-  justify-content: flex-end;
-  z-index: 5;
-}
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  height:100%;
-  border: 2px solid salmon;
-  z-index: 0;
-
-}
-#videoFrame{
-  height: 100%;
+.container {
+  height: 80vh;
   width: 100%;
-  pointer-events: none;
+  max-height: 80vh;
+  display: flex;
+  justify-content: center;
+  border: 2px solid yellow;
 
 }
+.tv-wrapper {
+  height: 80vh;
+  width: calc(80vh * 1.497);
+  border: 2px solid violet;
+  display: flex;
+  justify-content: flex-end;
+  background-image: url("../img/tvFrame.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.videoFrame {
+  display: flex;
+  border: 2px solid coral;
+  max-height: 100%;
+  flex-grow: 1;
+  padding: 2%;
+  padding-bottom: 6%;
+}
+
+#videoFrame {
+  display: block;
+  max-height: 100%;
+  min-width: 100%;
+  z-index: -50;
+  pointer-events: none;
+}
+
+#background {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -55;
+  background-color: black;
+}
+
 .buttonsContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
   width: 22.5%;
-  z-index: 10;
+  border: 1px solid red;
 }
 
 button {
@@ -66,6 +85,12 @@ button {
   margin: 10px;
 }
 
+button:focus {
+  outline: 0;
+}
+
 button:hover:enabled {
-  color: gold;
+  color: red;
+  transform: scale(1.3);
+  transition: all 0.4s ease-in-out;
 }
